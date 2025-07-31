@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // function daysCovert(a){
+    //     var y=a/365
+    //     var m=a/30.44
+    //     var w=a/7
+    //     var h=a*24
+    //     var min=a*24*60
+    //     var sec=a*24*60*60
+    //      return {
+    //         years:y,
+    //         months:m,
+    //         weeks:w,
+    //         hours:h,
+    //         minutes:min,
+    //         seconds:sec
+
+    //      }
+        
+    // }
+    //  var result=daysCovert(365)
+    //      console.log("years: "+result.years)
+    //     console.log("months: "+result.months)
+    //     console.log("weeks: "+result.weeks)
+    //     console.log("hours: "+result.hours)
+    //     console.log("minutes: "+result.minutes)
+    //      console.log("seconds: "+result.seconds)
+    //   var c=[10,5,6,7]
+    //   console.log(typeof c)  //object
+    //   var res=0
+    //   for(var i=2;i<=4;i++){
+    //     res=res+2*Math.pow(i,2)+3
+
+    //   }
+      
+    //   console.log(Math.sqrt(25) )
+    
+    //  function foo(){
+    //     var a
+    //     console.log(a)
+    //     a=30
+        
+    //  }
+    //  foo()
+
+//  var myarr=[2,4,6,8,]
+//     //  var a=4
+//     // FOREACH()
+
+//     // REGULAR FUNCTION
+//     var myarr=[2,4,6,8,]
+//     myarr.forEach(function(value){
+//         console.log(value)
+//     })
+
+
+//     // // ARROW FUNCTION
+//     myarr.forEach((value)=>{
+//         console.log(value)
+//     })
+
+//     function myfunc(value){
+//         console.log(value*3)
+//      }
+    
+//      myarr.forEach(myfunc)
+//     myfunc(3)
+    
+
+    
+    
+
+//     // MAP()
+    
+//      var newarr=myarr.map(function(value){
+//        return value%2==0
+       
+//      })
+//      console.log(newarr) // [true, true, true, true]
+      
+//     // FILTER()
+//      var newarr=myarr.filter(function(value){
+//        return value%2==0
+       
+//      })
+//      console.log(newarr)//[2,4,6,8]
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+   var length = parseInt(userInput[0]); 
+   
+  var pass = userInput[1].split(" ");
+  
+  // let arrUnique=[];
+  // pass.forEach(data=>{
+    
+  //   if(!arrUnique.includes(data)){
+      
+  //     arrUnique.push(data) 
+  //   }
+  // });
+  // console.log(arrUnique)
+  
+ 
+ 
+ 
+
+  var uniquePass = [];
+
+
+  for (var i = 0; i < pass.length; i++) {
+    var res=pass[i]
+    for(var j = 0; j < pass.length; j++){
+    if(res!=pass[j] || i==j){
+    // if (!uniquePass.includes(pass[i])) {
+      
+      continue
+    }
+    }
+    uniquePass.push(res);
+  }
+
+  console.log(uniquePass.join(" "));
+  
+  
+ 
+
+  //end-here
+});
+    
+
+</script>
+<body>
+    
+</body>
+</html>

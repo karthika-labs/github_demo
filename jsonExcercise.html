@@ -367,6 +367,9 @@ console.log(arr)
 // console.log(isFinite(f))//false
 // console.log(isNaN(f))//true
 // console.log(typeof f)//number
+
+
+// ZOHO pattern 
 for(var i=1;i<=4;i++){
     
     var row=""
@@ -383,7 +386,99 @@ var rev=""
     console.log(rev)
   }
   
+// bubble sort
+// Getting input via STDIN
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+  // console.log(userInput);
+  // console.log(userInput.length)=4
+  var matrixLength = userInput[0];
+  var matrixArray = [];
+  
+  for(var i=1; i < userInput.length; i++){
+    var row = userInput[i].split(" ");
+    // console.log(row) //return array
+    // console.log(row.length) 3 each time
+    for(var j=0; j < row.length; j++){
+        matrixArray.push(parseInt(row[j]))
+        // console.log( matrixArray) //each element in row added to matrixarray one by one
+    }
+  }
+  
+  // console.log(matrixArray)
+  
+  // Sort
+  
+  for(var i=0; i<matrixArray.length; i++){
+    
+    for(var j=0; j < matrixArray.length - 1 - i; j++){
+      
+      // console.log(matrixArray[j], matrixArray.length - 1 - i)
+        // console.log(matrixArray[j], matrixArray[j + 1]);
+        
+        if(matrixArray[j] > matrixArray[j + 1]){
+            var temp = matrixArray[j];
+            
+            matrixArray[j] = matrixArray[j + 1];
+            
+            matrixArray[j + 1] = temp
+            
+        }
+      // console.log(matrixArray)  
+    }
+  }
+  
+  // console.log(matrixArray)
+  
+  var matrixRow = matrixLength.split(" ")[0] //if it is array use  matrixLength[0] here it is a string so written like that
+  var matrixColumn = matrixLength.split(" ")[1]
+  // console.log("Matrix Row", matrixRow)
+  // console.log("Matrix Column", matrixColumn)
+  
+  
+  for(var i = 0; i < matrixRow * matrixColumn - 2; i = i + 3){
+      // console.log(i)
+      var row = ""
+      for(j=0; j < matrixColumn; j++){
+        // console.log(i,j,i + j)
+        if(j == matrixColumn - 1){
+          row = row + matrixArray[i + j ]
+        }else{
+          row = row + matrixArray[i + j ] + " "
+        }
+        
+      }
+      console.log(row)
+  }
+  
+  
+  // console.log("12 21 23")
+  // console.log("32 34 45")
+  // console.log("78 87 89")
+  
+  
+  
+  
+  
+  
+  
+
+  //end-here
+});
 
 
 
